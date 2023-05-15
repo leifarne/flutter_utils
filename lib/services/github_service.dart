@@ -7,13 +7,12 @@ import 'file_service.dart';
 class GithubFileService extends FileService {
   final String user;
   final String repo;
+  final String token;
   late GitHub github;
   late RepositorySlug repositorySlug;
 
-  GithubFileService(this.user, this.repo) {
-    // github personal token: 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. Expires on Wed, Apr 5 2023.
-    // var authentication = Authentication.basic('leif.arne.rones@gmail.com', 'Traktor20!');
-    var authentication = Authentication.withToken('4b47866c46ac2af6bf64631f807bdeb58144c85b');
+  GithubFileService(this.user, this.repo, this.token) {
+    var authentication = Authentication.withToken(token);
     github = GitHub(auth: authentication);
     repositorySlug = RepositorySlug(user, repo);
   }
