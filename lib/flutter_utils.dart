@@ -3,7 +3,6 @@ library flutter_utils;
 import 'package:flutter/material.dart';
 
 export 'services/file_service.dart';
-export 'services/github_service.dart';
 
 Widget futureBuilderWithError<T>(Future<T> future, Widget Function(BuildContext context, AsyncSnapshot<T> snapshot) builder) {
   return FutureBuilder<T>(
